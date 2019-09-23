@@ -1,2 +1,5 @@
 # docker_bir
-Docker files to any OS and ROS
+
+Useful docker images for robotic projects: https://hub.docker.com/u/bircimatec
+
+
