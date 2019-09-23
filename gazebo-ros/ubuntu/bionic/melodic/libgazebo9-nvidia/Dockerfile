@@ -1,4 +1,4 @@
-FROM bir/gazebo-ros:lib9-melodic
+FROM bircimatec/gazebo-ros:lib9-melodic
 
 #NVIDIA
 ENV NVIDIA_VISIBLE_DEVICES \

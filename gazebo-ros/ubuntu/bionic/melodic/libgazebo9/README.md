@@ -1,5 +1,5 @@
 ## Build image
 
 ``
-$ docker build -t bir/gazebo-ros:lib9-melodic .
+$ docker build -t bircimatec/gazebo-ros:lib9-melodic .
 ``
