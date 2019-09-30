@@ -12,8 +12,6 @@ Install **nvidia-docker2**: https://github.com/nvidia/nvidia-docker/wiki/Install
 
 ## Build image
 
-Build image:
-
 ``
 $ docker build -t bircimatec/gazebo-ros:lib7-kinetic-nvidia .
 ``
