@@ -1,4 +1,8 @@
-# Dockerfile: Ubuntu 16.04 with ROS Kinetic (full-desktop), Gazebo 7 and NVidia
+# Dockerfile: Ubuntu 16.04 with ROS Kinetic
+**Description**:
+- Full-desktop version for ROS
+- Gazebo 7 with GUI possibility
+- NVidia
 
 ## Dependencies
 
