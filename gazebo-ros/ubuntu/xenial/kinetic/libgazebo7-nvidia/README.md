@@ -16,7 +16,7 @@ Install **nvidia-docker2**: https://github.com/nvidia/nvidia-docker/wiki/Install
 $ docker build -t bircimatec/gazebo-ros:lib7-kinetic-nvidia .
 ``
 
-## Run
+## Run (Without NVidia Drivers)
 ``
 $ xhost +local:root
 ``
