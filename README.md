@@ -1,61 +1,48 @@
-# DockerIt
-Use Docker containers for tests and code validation!
+# persistent-home-docker
+This repository provides a minimum template configuration so that the container's user home folder is mirrored in the host, making its files persistent.
 
-![Screenshot from 2019-09-30 12-51-31](https://user-images.githubusercontent.com/32513366/65895032-24407080-e381-11e9-9f9e-8212fde3ca4f.png)
+---
+## Usage
 
-Useful docker images for robotic projects: https://hub.docker.com/u/bircimatec
+1. Clone (or download) this repository:
+```
+git clone git@github.com:Brazilian-Institute-of-Robotics/docker_bir.git
+```
+2. Adapt `Dockerfile` to your needs.
+In this example, configuration was set up to work with ROS2 Foxy. You
+may want to rename the image in both `Dockerfile` and `run-devel.bash`.
 
-## Install Docker
-``
-$ sudo apt-get install docker.io
-``
+1. Run `run-devel.bash` (make sure it has execute permission):
 
-## Docker basic commands
-- Build a *Dockerfile*
+```
+chmod +x run-devel.bash
+./run-devel.bash
+```
 
-``
-$ docker build -t bircimatec/name:tag .
-``
+The `home` folder of this repository will mirror and persist all the data of the container's home folder.
 
-- Kill a container
+---
+## Tip
 
-``
-$ docker kill containerName
-``
+I find extremely useful to keep a docker monitor running in a separate terminal
+showing the images, the running and the stopped containers.
 
-- List all images in your computer
+For that, add the
+following to your host's `~/.bash_aliases`:
 
-``
-$ docker image ls
-``
+```
+alias docker_status='echo === IMAGES =============== && docker images && echo && \
+             echo === RUNNING CONTAINERS === && docker ps && echo && \
+             echo === ALL CONTAINERS ======= && docker ps -a'
+alias docker_monitor='while true; clear; do docker_status; sleep 5; done'
+```
+Then:
+```
+source ~/.bash_aliases
+docker_monitor
+```
 
-- List all containers running in your computer
+---
+## References
+- http://wiki.ros.org/docker/Tutorials/GUI
 
-``
-$ docker container ls
-``
-
-- Erase all stopped containers
-
-``
-$ docker container prune
-``
-
-
-## Save your images into BIR DockerHub
-- First, you need to get acess to [link](https://hub.docker.com/u/bircimatec). For this, you need to talk to *Gustavo Rezende*.
-- After getting acess and built your image, follow the instructions:
-
-(1) Login in your Docker Account through terminal
-
-``
-$ docker login --username=yourUserNameInDockerHub
-``
-
-(2) Push to docker hub repository
-
-``
-$ docker push bircimatec/name:tag
-``
-
-**(!) Delete *.json* file after your push for password security.**
