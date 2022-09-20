@@ -1,4 +1,4 @@
-# persistent-home-docker
+# docker_bir
 This repository provides a minimum template configuration so that the container's user home folder is mirrored in the host, making its files persistent.
 
 ---
@@ -24,8 +24,7 @@ The `home` folder of this repository will mirror and persist all the data of the
 ---
 ## Tip
 
-I find extremely useful to keep a docker monitor running in a separate terminal
-showing the images, the running and the stopped containers.
+It might be helpful to have a terminal gathering all relevant information for the docker user such as the images, the running, and the stopped containers.
 
 For that, add the
 following to your host's `~/.bash_aliases`:
@@ -45,4 +44,5 @@ docker_monitor
 ---
 ## References
 - http://wiki.ros.org/docker/Tutorials/GUI
+- https://docs.docker.com/engine/reference/commandline/docker/
 
